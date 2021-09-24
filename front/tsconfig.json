@@ -18,9 +18,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "noImplicitAny": true,  //외부 라이브러리 호환성
   },
   "include": [
-    "src"
+    "src",
+    "src/@types/react-swipeable-routes/index.d.tx" //외부 라이브러리 호환성
   ]
 }

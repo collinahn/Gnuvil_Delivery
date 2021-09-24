@@ -1,26 +1,17 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './App.css';
-import Delivery from './component/Delivery';
-import Baemin1 from './component/Baemin1';
-import Takeout from './component/Takeout';
+import MainTabs from './component/MainTabs';
 
-function App() {
+export default function App() {
   return (
     <div className="App">
       <header className="App-header">
         위치 버튼 자리
       </header>
-      <nav className="App-nav">
-        <Link to="/">배달</Link>
-        <Link to="/baemin1">배민1</Link>
-        <Link to="/takeout">포장</Link>
-      </nav>
-      <body className='App-body'>
-        <Route path="/" exact={true} component={Delivery} />
-        <Route path="/baemin1" component={Baemin1} />
-        <Route path="/takeout" component={Takeout} />
-      </body>
+
+      <MainTabs />
+
       <footer className="App-footer">
         <Link to="/">  검색  </Link>
         <Link to="/">   찜   </Link>
@@ -29,7 +20,5 @@ function App() {
         <Link to="/"> My배민 </Link>
       </footer>
     </div>
-  );
+  ); 
 }
-
-export default App;
