@@ -3,6 +3,8 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import { Route, Link } from 'react-router-dom';
 import SwipeableRoutes from 'react-swipeable-routes';  // 스와이프 및 라우트 관리
+import {PullToRefresh} from "react-js-pull-to-refresh";
+import {PullDownContent, ReleaseContent, RefreshContent} from "react-js-pull-to-refresh";
 
 import "./MainTabs.css"
 import Delivery from './Delivery';
@@ -26,6 +28,11 @@ class MainTabs extends React.Component {
     });
   };
 
+  private onRefresh() {
+      return new Promise((resolve) => {
+          setTimeout(resolve, 2000);
+      });
+  }
   render() {
     const { index } = this.state;
 
@@ -36,7 +43,7 @@ class MainTabs extends React.Component {
           value={index} 
           onChange={this.handleChange} 
           variant="scrollable"
-          scrollButtons="auto"
+          scrollButtons="on"
         >
           <Tab label="배달"  component={ Link } to='/' />
           <Tab label="배민1" component={ Link } to='/baemin1' />
@@ -46,15 +53,26 @@ class MainTabs extends React.Component {
           <Tab label="선물하기" component={ Link } to='/gift' />
           <Tab label="전국별미" component={ Link } to='/everywhere' />
         </Tabs>
-        <SwipeableRoutes className="Main-Routes" index={index} onChangeIndex={this.handleChangeIndex}>
-          <Route path='/'        component={Delivery} />
-          <Route path='/baemin1' component={Baemin1} />
-          <Route path='/takeout' component={Takeout} />
-          <Route path='/b-mart' component={Takeout} />
-          <Route path='/shopping' component={Takeout} />
-          <Route path='/gift' component={Takeout} />
-          <Route path='/everywhere' component={Takeout} />
-        </SwipeableRoutes>
+        <PullToRefresh
+          pullDownContent={<PullDownContent />}
+          releaseContent={<ReleaseContent />}
+          refreshContent={<RefreshContent />}
+          pullDownThreshold={100}
+          onRefresh={this.onRefresh}
+          triggerHeight={1000}
+          backgroundColor='white'
+          startInvisible={true}
+        >
+          <SwipeableRoutes className="Main-Routes" index={index} onChangeIndex={this.handleChangeIndex}>
+            <Route path='/'        component={Delivery} />
+            <Route path='/baemin1' component={Baemin1} />
+            <Route path='/takeout' component={Takeout} />
+            <Route path='/b-mart' component={Takeout} />
+            <Route path='/shopping' component={Takeout} />
+            <Route path='/gift' component={Takeout} />
+            <Route path='/everywhere' component={Takeout} />
+          </SwipeableRoutes>
+        </PullToRefresh>
       </div>
     );
   }

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './App.css';
 import MainTabs from './component/MainTabs';
+import ScrollToTop from './component/ScrollToTop';
 
 export default function App() {
   return (
@@ -10,6 +11,7 @@ export default function App() {
         위치 버튼 자리
       </header>
 
+      <ScrollToTop />
       <MainTabs />
 
       <footer className="App-footer">
