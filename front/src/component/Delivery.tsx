@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import MenuTabs from './MenuTabs';
+import MenuCategory from './MenuCategory';
+import MenuTabs from './MenuCategory';
 
 const Delivery = () => {
   const menus = ['1인분', '한식','분식','카페·디저트','돈까스·회·일식',
@@ -9,9 +10,9 @@ const Delivery = () => {
   return (
     <div>
       <h1>배달</h1>
-      <p>1번째 페이지</p>
+      <p>광고란</p>
 
-      <MenuTabs names={menus}/>
+      <MenuCategory names={menus}/>
     </div>
   );
 };

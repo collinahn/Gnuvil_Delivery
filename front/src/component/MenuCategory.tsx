@@ -1,11 +1,11 @@
 import React from 'react';
-import "./MenuTabs.css";
+import "./MenuCategory.css";
 
 type Iprops = {
     names:string[];
 };
 
-const MenuTabs = ({names}:Iprops) => {
+const MenuCategory = ({names}:Iprops) => {
 
     return(
         <div className="container">
@@ -26,4 +26,4 @@ const MenuTabs = ({names}:Iprops) => {
     );
 };
 
-export default MenuTabs;
+export default MenuCategory;

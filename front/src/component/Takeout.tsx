@@ -1,5 +1,5 @@
 import React from 'react';
-import MenuTabs from './MenuTabs';
+import MenuCategory from './MenuCategory';
 
 const Takeout = () => {
   const menus = ['한식','분식','카페·디저트','돈까스·회·일식', '치킨','피자',
@@ -7,8 +7,8 @@ const Takeout = () => {
   return (
     <div>
       <h1>포장</h1>
-      <p>포장 탭</p>
-      <MenuTabs names={menus}/>
+      <p>광고란</p>
+      <MenuCategory names={menus}/>
     </div>
   );
 };
