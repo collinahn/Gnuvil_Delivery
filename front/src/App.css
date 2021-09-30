@@ -51,5 +51,45 @@
   justify-content: space-evenly;
   font-size: calc(10px + 2vmin);
   color: white;
+  z-index: 1;
+}
+
+
+.App-gps{
+  background:#0fd1d1;
+  color:#fff;
+  border:none;
+  position:relative;
+  min-height: 6vh;
+  font-size:1.0em;
+  width: 100vw;
+  /* padding:0 100vw; */
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+}
+.App-gps:hover{
+  background:#fff;
+  color:#0fd1d1;
+}
+.App-gps:before,.App-gps:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:3px;
+  width:0;
+  background: #0fd1d1;
+  transition:400ms ease all;
+}
+.App-gps:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.App-gps:hover:before,.App-gps:hover:after{
+  width:100%;
+  transition:800ms ease all;
 }
 
