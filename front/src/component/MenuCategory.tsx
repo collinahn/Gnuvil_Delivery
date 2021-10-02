@@ -1,26 +1,28 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import "./MenuCategory.css";
 
 type Iprops = {
     names:string[];
+    path:string
 };
 
-const MenuCategory = ({names}:Iprops) => {
-
+const MenuCategory = ({names,path}:Iprops) => {
     return(
-        <div className="container">
-            <div className="menus">
+        <div className="category">
+            <div className="category-btns">
                 {
                     names.map((name,i)=>{
                         return (
-                            <button className="menu" key={i}>
-                                <img src={`/images/icons/${name}.png`} alt={name} />
-                                <h3>{name}</h3>
-                            </button>
+                            <Link to={`${path}/stores/${name}`}>
+                                <button className="category-btn" key={i} >
+                                    <img src={`/images/icons/${name}.png`} alt={name} />
+                                    <h3>{name}</h3>
+                                </button>
+                            </Link>
                         );
                     })
                 }
-
             </div>
         </div>
     );

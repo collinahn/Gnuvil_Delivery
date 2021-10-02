@@ -3,7 +3,6 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import { Route, Link } from 'react-router-dom';
 import SwipeableRoutes from 'react-swipeable-routes';  // 스와이프 및 라우트 관리
-
 import "./MainTabs.css"
 import Delivery from './Delivery';
 import Baemin1 from './Baemin1';

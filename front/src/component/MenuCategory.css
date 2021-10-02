@@ -1,4 +1,25 @@
-button {
+h3 {
+  margin: 0;
+}
+
+.category {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.category-btns {
+  max-width: 800px;
+  width: 100%;
+  margin: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(5rem, max-content));
+  grid-gap: 2px;
+  justify-content: center;
+}
+
+.category-btn {
   font-family: "Jua", sans-serif;
   background-color: transparent;
   border: none;
@@ -10,50 +31,26 @@ button {
   cursor: pointer;
 }
 
-h3 {
-  margin: 0;
+.category-btn:active {
+  transform: scale(0.9);
 }
 
-button:active {
-  transform: scale(1.2);
-}
-
-.container {
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.menus {
-  max-width: 800px;
-  width: 100%;
-  margin: 1rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(5rem, max-content));
-  grid-gap: 2px;
-  justify-content: center;
-}
-
-.menu img {
+.category-btn img {
   height: 3.5rem;
 }
-/* media */
+
 @media screen and (max-width: 48rem) {
-  button {
+  .category-btn {
     width: 5rem;
     height: 4.5rem;
-  }
-
-  .menu {
     margin: 0;
   }
 
-  .menu img {
+  .category-btn img {
     height: 2.6rem;
   }
 
-  .menu h3 {
+  .category-btn h3 {
     font-size: 0.75rem;
   }
 }
