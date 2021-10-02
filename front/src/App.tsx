@@ -11,7 +11,7 @@ export default function App() {
 
   const updateHood = (hood: string) => {
     setCurrentHood(hood);
-  }
+  };
 
   const onGpsModal = () => {
     setGpsModal(!gpsModal);
@@ -19,12 +19,12 @@ export default function App() {
 
   const closeGpsModal = () => {
     if (gpsModal) setGpsModal(false);
-  }
+  };
 
   useEffect(() => {
-    window.addEventListener('click', closeGpsModal);
+    window.addEventListener("click", closeGpsModal);
     return () => {
-      window.removeEventListener('click', closeGpsModal);
+      window.removeEventListener("click", closeGpsModal);
     };
   }, []);
 
@@ -34,7 +34,12 @@ export default function App() {
         <button className="App-gps" onClick={onGpsModal}>
           {currentHood} ∨
         </button>
-        <GPSModal open={gpsModal} close={onGpsModal} update={updateHood} />
+        <GPSModal
+          open={gpsModal}
+          close={onGpsModal}
+          currentHood={currentHood}
+          updateHood={updateHood}
+        />
       </header>
 
       <ScrollToTop />
@@ -50,4 +55,3 @@ export default function App() {
     </div>
   );
 }
-
