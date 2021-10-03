@@ -4,6 +4,7 @@ import './App.css';
 import MainTabs from './component/MainTabs';
 import Stores from './component/Stores';
 
+import ScrollToTop from './component/ScrollToTop';
 
 export default function App() {
   const mainPath = ['','/baemin1','/takeout','/b-mart','/shopping','/gift','/everywhere'];
@@ -16,6 +17,7 @@ export default function App() {
               위치 버튼 자리
           </header>
 
+          <ScrollToTop />
           <MainTabs />
 
           <footer className="App-footer">
