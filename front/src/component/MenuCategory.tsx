@@ -14,7 +14,7 @@ const MenuCategory = ({names,path}:Iprops) => {
                 {
                     names.map((name,i)=>{
                         return (
-                            <Link to={`${path}/stores/${name}`}>
+                            <Link to={`${path}/${name}`}>
                                 <button className="category-btn" key={i} >
                                     <img src={`/images/icons/${name}.png`} alt={name} />
                                     <h3>{name}</h3>
