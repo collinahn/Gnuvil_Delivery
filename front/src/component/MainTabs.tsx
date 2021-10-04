@@ -55,7 +55,7 @@ export default function MainTabs() {
         refreshContent={<RefreshContent />}
         pullDownThreshold={70}
         onRefresh={onRefresh}
-        triggerHeight={1000}
+        triggerHeight={200}
         backgroundColor="white"
         startInvisible={true}
       >

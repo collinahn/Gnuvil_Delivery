@@ -1,12 +1,34 @@
-import React from 'react';
-import { Route, Link,Switch} from 'react-router-dom';
-import './App.css';
-import MainTabs from './component/MainTabs';
+import React, { useEffect, useState } from "react";
+import { Route, Link, Switch } from "react-router-dom";
+import "./App.css";
+import GPSModal from "./component/GPSModal";
+import MainTabs from "./component/MainTabs";
 import Stores from './component/Stores';
-
-import ScrollToTop from './component/ScrollToTop';
+import ScrollToTop from "./component/ScrollToTop";
 
 export default function App() {
+  const [currentHood, setCurrentHood] = useState<string>("동대문구 이문동");
+  const [gpsModal, setGpsModal] = useState<boolean>(false);
+
+  const updateHood = (hood: string) => {
+    setCurrentHood(hood);
+  };
+
+  const onGpsModal = () => {
+    setGpsModal(!gpsModal);
+  };
+
+  const closeGpsModal = () => {
+    if (gpsModal) setGpsModal(false);
+  };
+
+  useEffect(() => {
+    window.addEventListener("click", closeGpsModal);
+    return () => {
+      window.removeEventListener("click", closeGpsModal);
+    };
+  }, []);
+
   const mainPath = ['','/baemin1','/takeout','/b-mart','/shopping','/gift','/everywhere'];
   
   return (
@@ -34,5 +56,5 @@ export default function App() {
           exact/>
       </Switch>
     </div>
-  ); 
+  );
 }
