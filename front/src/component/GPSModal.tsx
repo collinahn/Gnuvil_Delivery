@@ -1,6 +1,6 @@
 import React, { useState, ReactElement, useEffect } from "react";
 import { createPortal } from "react-dom";
-import MapModal from "./MapModal";
+// import MapModal from "./MapModal";
 
 import "./GPSModal.css";
 import { Link } from "react-router-dom";
