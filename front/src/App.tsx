@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Route, Link, Switch } from "react-router-dom";
 import "./App.css";
 import GPSModal from "./component/GPSModal";
 import MainTabs from "./component/MainTabs";
+import Stores from './component/Stores';
 import ScrollToTop from "./component/ScrollToTop";
 
 export default function App() {
@@ -28,30 +29,32 @@ export default function App() {
     };
   }, []);
 
+  const mainPath = ['','/baemin1','/takeout','/b-mart','/shopping','/gift','/everywhere'];
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <button className="App-gps" onClick={onGpsModal}>
-          {currentHood} ∨
-        </button>
-        <GPSModal
-          open={gpsModal}
-          close={onGpsModal}
-          currentHood={currentHood}
-          updateHood={updateHood}
-        />
-      </header>
+      <Switch>
+        <Route path={mainPath} exact>
+          <header className="App-header">
+              위치 버튼 자리
+          </header>
 
-      <ScrollToTop />
-      <MainTabs />
+          <ScrollToTop />
+          <MainTabs />
 
-      <footer className="App-footer">
-        <Link to="/">_검_색_</Link>
-        <Link to="/">___찜___</Link>
-        <Link to="/">_블로그_</Link>
-        <Link to="/">주문내역</Link>
-        <Link to="/">My배민</Link>
-      </footer>
+          <footer className="App-footer">
+            <Link to="/">  검색  </Link>
+            <Link to="/">   찜   </Link>
+            <Link to="/"> 블로그 </Link>
+            <Link to="/">주문내역</Link>
+            <Link to="/"> My배민 </Link>
+          </footer>
+        </Route>
+        <Route 
+          path={['/:menu','/:tab/:menu']} 
+          component={Stores} 
+          exact/>
+      </Switch>
     </div>
   );
 }
