@@ -1,9 +1,9 @@
 import React, { useState, ReactElement, useEffect } from "react";
 import { createPortal } from "react-dom";
-// import MapModal from "./MapModal";
+import MapModal from "./MapModal";
+import { Link, Route } from "react-router-dom";
 
 import "./GPSModal.css";
-import { Link } from "react-router-dom";
 
 interface GPSProps {
   open: boolean;
@@ -23,12 +23,15 @@ export default function GPSModal(props: GPSProps) {
     close();
   };
 
-  const onGoogleMap = () => {
+  const onMapModal = () => {
     setMapmodal(!mapModal);
+    console.log(mapModal);
   };
 
   return createPortal(
     <div>
+      <Route path="/map" exact={true} component={MapModal} />
+
       <div className={open ? "GPSModal-background" : ""} onClick={close} />
       <div className={open ? "GPSModal-active" : ""}>
         {open ? (
@@ -47,7 +50,9 @@ export default function GPSModal(props: GPSProps) {
                   placeholder="지번, 도로명, 건물명으로 검색"
                 ></input>
               </div>
-              <button className="GPSModal-setLocation">현재 위치로 설정</button>
+              <Link to="/map" className="GPSModal-setLocation">
+                현재 위치로 설정
+              </Link>
             </div>
             <div className="GPSModal-seperator" />
             <div className="GPSModal-gridContainerBottom">
@@ -75,13 +80,6 @@ export default function GPSModal(props: GPSProps) {
               >
                 {hoodSlot[2]}
               </button>
-
-              {/* <button className="GPSModal-closeBtn" onClick={close}>
-                {" "}
-                &times;{" "}
-              </button> */}
-              {/* <button className="GPSModal-googlemap" onClick={onGoogleMap}>GPS</button> */}
-              {/* <MapModal open={mapModal} close={onGoogleMap} /> */}
             </div>
             <div className="GPSModal-seperator" />
           </>

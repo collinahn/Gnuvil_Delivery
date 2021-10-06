@@ -5,6 +5,7 @@ import GPSModal from "./component/GPSModal";
 import MainTabs from "./component/MainTabs";
 import Stores from "./component/Stores";
 import ScrollToTop from "./component/ScrollToTop";
+require("dotenv").config();
 
 export default function App() {
   const [currentHood, setCurrentHood] = useState<string>("동대문구 이문동");
@@ -37,6 +38,7 @@ export default function App() {
     "/shopping",
     "/gift",
     "/everywhere",
+    "/map",
   ];
 
   return (
