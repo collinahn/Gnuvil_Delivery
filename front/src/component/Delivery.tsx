@@ -1,4 +1,5 @@
 import React from 'react';
+import Banner from './Banner';
 import MenuCategory from './MenuCategory';
 
 
@@ -8,8 +9,7 @@ const Delivery = () => {
 
   return (
     <div>
-      <h1>배달</h1>
-      <p>광고란</p>
+      <Banner items={['1','2','3','4','5','6']}/>
       
       <MenuCategory names={menus} path=''/>
     </div>

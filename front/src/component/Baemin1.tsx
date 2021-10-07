@@ -1,6 +1,7 @@
 import React from 'react';
 import MenuCategory from './MenuCategory';
 import {RouteComponentProps} from 'react-router-dom'; 
+import Banner from './Banner';
 
 const Baemin1 = ({location}: RouteComponentProps) => {
   const menus = ['1인분', '한식','분식','카페·디저트','돈까스·회·일식',
@@ -9,9 +10,7 @@ const Baemin1 = ({location}: RouteComponentProps) => {
 
   return (
     <div>
-      <h1>배민1</h1>
-      <p>광고란</p>
-
+      <Banner items={['1','2','3','4','5','6']}/>
       <MenuCategory names={menus} path={location.pathname}/>
     </div>
   );
