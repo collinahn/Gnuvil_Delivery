@@ -1,4 +1,4 @@
-import React, { useState, ReactElement, useEffect } from "react";
+import React, { useState } from "react";
 import { createPortal } from "react-dom";
 import MapModal from "./MapModal";
 import { Link, Route } from "react-router-dom";
@@ -39,7 +39,7 @@ export default function GPSModal(props: GPSProps) {
             <div className="GPSModal-gridContainerTop">
               <h4>
                 주소 설정
-                <Link className="GPSModal-editBtn" to={"/"}>
+                <Link className="GPSModal-editBtn" to={"/map"}>
                   편집
                 </Link>
               </h4>
