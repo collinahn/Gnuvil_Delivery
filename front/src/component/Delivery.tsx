@@ -9,7 +9,7 @@ const Delivery = () => {
 
   return (
     <div>
-      <Banner items={['1','2','3','4','5','6']}/>
+      <Banner type='big'/>
       
       <MenuCategory names={menus} path=''/>
     </div>

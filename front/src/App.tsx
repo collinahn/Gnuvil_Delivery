@@ -4,6 +4,7 @@ import "./App.css";
 import GPSModal from "./component/GPSModal";
 import MainTabs from "./component/MainTabs";
 import Stores from "./component/Stores";
+import Event from './component/Event';
 import ScrollToTop from "./component/ScrollToTop";
 
 export default function App() {
@@ -67,6 +68,7 @@ export default function App() {
           </footer>
         </Route>
         <Route path={["/:menu", "/:tab/:menu"]} component={Stores} exact />
+        <Route path="/event" component={Event} exact />
       </Switch>
     </div>
   );

@@ -10,10 +10,10 @@ const Takeout = ({location}: RouteComponentProps) => {
   return (
     <div>
       <h3>포장</h3>
-      <p>광고란</p>
+      <p>주변 포장 가게</p>
 
       <MenuCategory names={menus} path={location.pathname}/>
-      <Banner items={['1','2','3','4','5','6']} type='small'/>
+      <Banner type='small'/>
     </div>
   );
 };

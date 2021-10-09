@@ -1,9 +1,21 @@
 /* Slider */
+.slick-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .slick-slide {
-  height: 6rem;
   background-color: darksalmon;
   text-align: end;
   position: relative;
+}
+
+.Banner-contianer {
+  max-width: 1000px;
+}
+
+.Banner-img {
+  width: 100%;
 }
 
 /* Btn */

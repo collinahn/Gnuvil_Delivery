@@ -10,7 +10,7 @@ const Baemin1 = ({location}: RouteComponentProps) => {
 
   return (
     <div>
-      <Banner items={['1','2','3','4','5','6']}/>
+      <Banner type='big'/>
       <MenuCategory names={menus} path={location.pathname}/>
     </div>
   );
